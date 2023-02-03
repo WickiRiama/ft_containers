@@ -2,3 +2,6 @@
 *.out
 *.o
 *.d
+build/
+ft_containers
+std_containers
