@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/03 16:28:28 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/03 17:24:36 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,14 @@ int main(void)
 	NSP::stack<std::string, std::vector<std::string> > stringStack; // A MODIFIER !
 	NSP::stack<std::string, std::vector<std::string> > stringStack2(testStringVector); // A MODIFIER !
 
-	std::cout << "Empty int stack is empty: " << std::boolalpha << intStack.empty() << std::endl;
-	std::cout << "Empty string stack is empty: " << stringStack.empty() << std::endl;
-	std::cout << "Not empty int stack is empty: " << intStack2.empty() << std::endl;
-	std::cout << "Not empty string stack is empty: " << stringStack2.empty() << std::endl;
+	std::cout << "Empty int stack is empty: " << std::boolalpha 
+			  << intStack.empty() << " and size is: " << intStack.size()
+			  << std::endl;
+	std::cout << "Empty string stack is empty: " << stringStack.empty()
+			  << " and size is: " << stringStack.size() << std::endl;
+	std::cout << "Not empty int stack is empty: " << intStack2.empty()
+			  << " and size is: " << intStack2.size() << std::endl;
+	std::cout << "Not empty string stack is empty: " << stringStack2.empty()
+			  << " and size is: " << stringStack2.size() << std::endl;
 
 }

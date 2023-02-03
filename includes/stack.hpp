@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:53:19 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/03 16:20:48 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/03 16:39:39 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ namespace ft
 	public:
 		explicit stack(const Container &src = Container()) { c = src; }
 		bool empty() const { return c.empty(); }
-	// 	size_type size() const { return c.size(); }
+		size_type size() const { return c.size(); }
 	// 	value_type &top() { return c.back(); }
 	// 	const value_type &top() const { return c.back(); }
 	// 	void push(const value_type &x) { c.push_back(x); }
