@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/06 11:33:29 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/06 11:51:02 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int main(void)
 
 	NSP::stack<int, std::vector<int> > intStack; // A MODIFIER !!!!!!!!!!!!!!!!!
 	NSP::stack<int, std::vector<int> > intStack2(testIntVector); // A MODIFIER !
+	NSP::stack<int, std::vector<int> > const constIntStack(testIntVector); // A MODIFIER !
+
 	NSP::stack<std::string, std::vector<std::string> > stringStack; // A MODIFIER !
 	NSP::stack<std::string, std::vector<std::string> > stringStack2(testStringVector); // A MODIFIER !
+	NSP::stack<std::string, std::vector<std::string> > const constStringStack(testStringVector); // A MODIFIER !
 
 	std::cout << "Empty int stack is empty: " << std::boolalpha 
 			  << intStack.empty() << " and size is: " << intStack.size()
@@ -41,8 +44,11 @@ int main(void)
 			  << " and size is: " << stringStack.size() << std::endl;
 	std::cout << "Not empty int stack is empty: " << intStack2.empty()
 			  << " and size is: " << intStack2.size() << std::endl;
-	std::cout << "Not empty string stack is empty: " << stringStack2.empty()
-			  << " and size is: " << stringStack2.size() << std::endl;
+	std::cout << "Not empty const int stack is empty: " << constIntStack.empty()
+			  << " and size is: " << constIntStack.size() << std::endl;
+	std::cout << "Not empty const string stack is empty: "
+			  << constStringStack.empty() << " and size is: "
+			  << constStringStack.size() << std::endl;
 
 	std::cout << std::endl;
 	std::cout << BCYN << "<< Element access >>" << RES << std::endl;
