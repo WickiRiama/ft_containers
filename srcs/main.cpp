@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/03 17:24:36 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/06 11:33:29 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 	std::vector<int> testIntVector(10, 2);
 
 
-	std::cout << BCYN << "<< Constructors >>" << RES << std::endl;
+	std::cout << BCYN << "<< Constructors and Capacity >>" << RES << std::endl;
 	std::cout << std::endl;
 
 	NSP::stack<int, std::vector<int> > intStack; // A MODIFIER !!!!!!!!!!!!!!!!!
@@ -44,4 +44,13 @@ int main(void)
 	std::cout << "Not empty string stack is empty: " << stringStack2.empty()
 			  << " and size is: " << stringStack2.size() << std::endl;
 
+	std::cout << std::endl;
+	std::cout << BCYN << "<< Element access >>" << RES << std::endl;
+	std::cout << std::endl;
+
+	// std::cout << "Empty int stack: top: " << intStack.top() << std::endl;
+	// std::cout << "Empty string stack: top: " << stringStack.top() << std::endl;
+	std::cout << "Not empty int stack: top: " << intStack2.top() << std::endl;
+	std::cout << "Not empty string stack: top: " << stringStack2.top()
+			  << std::endl;
 }
