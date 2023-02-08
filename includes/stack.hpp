@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:53:19 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 14:21:59 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 16:12:52 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ namespace ft
 		typedef typename Container::size_type size_type;
 		typedef Container container_type;
 
+		template<typename Tx, typename Containerx>
+		friend bool operator==(const stack<Tx, Containerx> &x, const stack<Tx, Containerx> &y);
+
 	protected:
 		Container c;
 
@@ -36,17 +39,23 @@ namespace ft
 		const value_type &top() const { return c.back(); }
 		void push(const value_type &x) { c.push_back(x); }
 		void pop() { c.pop_back(); }
+
+
 	};
 	
-	// template <class T, class Container>
-	// bool operator==(const stack<T, Container> &x,
-	// 				const stack<T, Container> &y);
+	template <class T, class Container>
+	bool operator==(const stack<T, Container> &x, const stack<T, Container> &y)
+	{
+		return x.c == y.c;
+	};
 	// template <class T, class Container>
 	// bool operator<(const stack<T, Container> &x,
 	// 			   const stack<T, Container> &y);
-	// template <class T, class Container>
-	// bool operator!=(const stack<T, Container> &x,
-	// 				const stack<T, Container> &y);
+	template <class T, class Container>
+	bool operator!=(const stack<T, Container> &x, const stack<T, Container> &y)
+	{
+		return !(x == y);
+	}
 	// template <class T, class Container>
 	// bool operator>(const stack<T, Container> &x,
 	// 			   const stack<T, Container> &y);

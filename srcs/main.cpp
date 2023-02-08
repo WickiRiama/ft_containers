@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 14:26:27 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 16:15:56 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,13 @@ int main(void)
 	std::cout << BYEL << "<<< Stack >>>" << RES << std::endl;
 	std::cout << std::endl;
 
-	std::vector<std::string> testStringVector(10, "hello");
-	std::vector<int> testIntVector(10, 2);
+	std::vector<std::string> testStringVector(10, "hello");// A MODIFIER !!!!!!!!!!!!!!!!!
+	std::vector<std::string> bigStringVector(1, "efg");// A MODIFIER !!!!!!!!!!!!!!!!!
+	std::vector<std::string> littleStringVector(1, "abc");// A MODIFIER !!!!!!!!!!!!!!!!!
 
+	std::vector<int> testIntVector(10, 2);// A MODIFIER !!!!!!!!!!!!!!!!!
+	std::vector<int> bigIntVector(1, 42);// A MODIFIER !!!!!!!!!!!!!!!!!
+	std::vector<int> littleIntVector(1, 3);// A MODIFIER !!!!!!!!!!!!!!!!!
 
 	std::cout << BCYN << "<< Constructors and Capacity >>" << RES << std::endl;
 	std::cout << std::endl;
@@ -90,10 +94,10 @@ int main(void)
 			  << ", size is: " << stringStack2.size() << " and top is: "
 			  << stringStack2.top() << std::endl;
 
+	std::cout << std::endl;
 	std::cout << CYN << "< Pop >" << RES << std::endl;
 	std::cout << std::endl;
 
-	std::cout << std::endl;
 	intStack.pop();
 	intStack2.pop();
 	// constIntStack.pop();
@@ -111,5 +115,28 @@ int main(void)
 			  << ", size is: " << stringStack2.size() << " and top is: "
 			  << stringStack2.top() << std::endl;
 
+	std::cout << std::endl;
+	std::cout << BCYN << "<< Non member operators >>" << RES << std::endl;
+	std::cout << std::endl;
 
+
+	NSP::stack<int, std::vector<int> > littleIntStack(littleIntVector);// A MODIFIER !!!!!!!!!!!!!!!!!
+	NSP::stack<int, std::vector<int> > bigIntStack(bigIntVector);// A MODIFIER !!!!!!!!!!!!!!!!!
+	NSP::stack<int, std::vector<int> > copyIntStack(intStack2);// A MODIFIER !!!!!!!!!!!!!!!!!
+	NSP::stack<std::string, std::vector<std::string> > littleStringStack(littleStringVector);// A MODIFIER !!!!!!!!!!!!!!!!!
+	NSP::stack<std::string, std::vector<std::string> > bigStringStack(bigStringVector);// A MODIFIER !!!!!!!!!!!!!!!!!
+	NSP::stack<std::string, std::vector<std::string> > copyStringStack(stringStack2);// A MODIFIER !!!!!!!!!!!!!!!!!
+
+	std::cout << "Little int stack and big int stack: ==: "
+			  << (littleIntStack == bigIntStack) << " !=: "
+			  << (littleIntStack != bigIntStack) << std::endl;
+	std::cout << "Int stack and copy: ==: "
+			  << (intStack2 == copyIntStack) << " !=: "
+			  << (intStack2 != copyIntStack) << std::endl;
+	std::cout << "Little string stack and big string stack: ==: "
+			  << (littleStringStack == bigStringStack) << " !=: "
+			  << (littleStringStack != bigStringStack) << std::endl;
+	std::cout << "String stack and copy: ==: "
+			  << (stringStack2 == copyStringStack) << " !=: "
+			  << (stringStack2 != copyStringStack) << std::endl;
 }
