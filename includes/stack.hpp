@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:53:19 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 10:52:49 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 14:21:59 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ namespace ft
 		value_type &top() { return c.back(); }
 		const value_type &top() const { return c.back(); }
 		void push(const value_type &x) { c.push_back(x); }
-	// 	void pop() { c.pop_back(); }
+		void pop() { c.pop_back(); }
 	};
 	
 	// template <class T, class Container>

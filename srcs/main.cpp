@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 14:20:40 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 14:26:27 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ int main(void)
 	std::cout << CYN << "< Push >" << RES << std::endl;
 	std::cout << std::endl;
 
-
 	intStack.push(42);
 	intStack2.push(42);
 	// constIntStack.push(42);
@@ -87,8 +86,30 @@ int main(void)
 	std::cout << "Size 1 string stack is empty: " << stringStack.empty()
 			  << ", size is: " << stringStack.size() << " and top is: "
 			  << stringStack.top() << std::endl;
-	std::cout << "Size 11 int stack is empty: " << stringStack2.empty()
-			  << ", size is: " << intStack2.size() << " and top is: "
+	std::cout << "Size 11 string stack is empty: " << stringStack2.empty()
+			  << ", size is: " << stringStack2.size() << " and top is: "
 			  << stringStack2.top() << std::endl;
+
+	std::cout << CYN << "< Pop >" << RES << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	intStack.pop();
+	intStack2.pop();
+	// constIntStack.pop();
+	stringStack.pop();
+	stringStack2.pop();
+	// constStringStack.pop();
+	std::cout << "Empty int stack is empty: " << intStack.empty()
+			  << ", size is: " << intStack.size() << std::endl;
+	std::cout << "Size 10 int stack is empty: " << intStack2.empty()
+			  << ", size is: " << intStack2.size() << " and top is: "
+			  << intStack2.top() << std::endl;
+	std::cout << "Empty string stack is empty: " << stringStack.empty()
+			  << ", size is: " << stringStack.size() << std::endl;
+	std::cout << "Size 10 string stack is empty: " << stringStack2.empty()
+			  << ", size is: " << stringStack2.size() << " and top is: "
+			  << stringStack2.top() << std::endl;
+
 
 }
