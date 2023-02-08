@@ -6,7 +6,7 @@
 #    By: mriant <mriant@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 13:03:13 by mriant            #+#    #+#              #
-#    Updated: 2023/02/03 13:39:56 by mriant           ###   ########.fr        #
+#    Updated: 2023/02/08 16:01:29 by mriant           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,3 +56,5 @@ fclean: clean
 re: fclean
 	make -C .
 
+-include ${DEPS_FT}
+-include ${DEPS_STD}
