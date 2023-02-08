@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:53:19 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 16:12:52 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 16:36:17 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ namespace ft
 
 		template<typename Tx, typename Containerx>
 		friend bool operator==(const stack<Tx, Containerx> &x, const stack<Tx, Containerx> &y);
+		template <class Tx, class Containerx>
+		friend bool operator<(const stack<Tx, Containerx> &x, const stack<Tx, Containerx> &y);
 
 	protected:
 		Container c;
@@ -47,15 +49,20 @@ namespace ft
 	bool operator==(const stack<T, Container> &x, const stack<T, Container> &y)
 	{
 		return x.c == y.c;
-	};
-	// template <class T, class Container>
-	// bool operator<(const stack<T, Container> &x,
-	// 			   const stack<T, Container> &y);
+	}
+
+	template <class T, class Container>
+	bool operator<(const stack<T, Container> &x, const stack<T, Container> &y)
+	{
+		return x.c < y.c;
+	}
+
 	template <class T, class Container>
 	bool operator!=(const stack<T, Container> &x, const stack<T, Container> &y)
 	{
 		return !(x == y);
 	}
+
 	// template <class T, class Container>
 	// bool operator>(const stack<T, Container> &x,
 	// 			   const stack<T, Container> &y);

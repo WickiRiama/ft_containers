@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 16:15:56 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 16:38:02 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,14 +129,18 @@ int main(void)
 
 	std::cout << "Little int stack and big int stack: ==: "
 			  << (littleIntStack == bigIntStack) << " !=: "
-			  << (littleIntStack != bigIntStack) << std::endl;
+			  << (littleIntStack != bigIntStack) << " <:"
+			  << (littleIntStack < bigIntStack) << std::endl;
 	std::cout << "Int stack and copy: ==: "
 			  << (intStack2 == copyIntStack) << " !=: "
-			  << (intStack2 != copyIntStack) << std::endl;
+			  << (intStack2 != copyIntStack) << " <:"
+			  << (intStack2 < copyIntStack) << std::endl;
 	std::cout << "Little string stack and big string stack: ==: "
 			  << (littleStringStack == bigStringStack) << " !=: "
-			  << (littleStringStack != bigStringStack) << std::endl;
+			  << (littleStringStack != bigStringStack) << " <:"
+			  << (littleStringStack < bigStringStack) << std::endl;
 	std::cout << "String stack and copy: ==: "
 			  << (stringStack2 == copyStringStack) << " !=: "
-			  << (stringStack2 != copyStringStack) << std::endl;
+			  << (stringStack2 != copyStringStack) << " <:"
+			  << (stringStack2 < copyStringStack) << std::endl;
 }
