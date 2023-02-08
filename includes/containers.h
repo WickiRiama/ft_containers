@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:25:42 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/03 16:10:35 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:59:52 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ namespace NSP = std;
 namespace NSP = ft;
 
 #endif
-
 
 #endif

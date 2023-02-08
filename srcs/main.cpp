@@ -6,11 +6,12 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 16:54:10 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:56:01 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <time.h>
 #include <vector> // A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #include "containers.h"
@@ -19,14 +20,16 @@
 int main(void)
 {
 
+	clock_t t0 = clock();
+
 	std::cout << BYEL << "<<< Stack >>>" << RES << std::endl;
 	std::cout << std::endl;
 
-	std::vector<std::string> testStringVector(10, "hello");// A MODIFIER !!!!!!!!!!!!!!!!!
+	std::vector<std::string> testStringVector(1000, "hello");// A MODIFIER !!!!!!!!!!!!!!!!!
 	std::vector<std::string> bigStringVector(1, "efg");// A MODIFIER !!!!!!!!!!!!!!!!!
 	std::vector<std::string> littleStringVector(1, "abc");// A MODIFIER !!!!!!!!!!!!!!!!!
 
-	std::vector<int> testIntVector(10, 2);// A MODIFIER !!!!!!!!!!!!!!!!!
+	std::vector<int> testIntVector(1000, 2);// A MODIFIER !!!!!!!!!!!!!!!!!
 	std::vector<int> bigIntVector(1, 42);// A MODIFIER !!!!!!!!!!!!!!!!!
 	std::vector<int> littleIntVector(1, 3);// A MODIFIER !!!!!!!!!!!!!!!!!
 
@@ -155,4 +158,11 @@ int main(void)
 			  << (stringStack2 > copyStringStack) << ", <=: "
 			  << (stringStack2 <= copyStringStack) << ", >=: "
 			  << (stringStack2 >= copyStringStack) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << BYEL << "<<< Time >>>" << RES << std::endl;
+	std::cout << std::endl;
+
+	clock_t t1 = clock();
+	std::cout << 10000 * (t1 - t0) / CLOCKS_PER_SEC << " microsecondes" << std::endl;
 }
