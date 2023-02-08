@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:32:34 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/06 11:51:02 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 14:20:40 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,38 @@ int main(void)
 	// std::cout << "Empty int stack: top: " << intStack.top() << std::endl;
 	// std::cout << "Empty string stack: top: " << stringStack.top() << std::endl;
 	std::cout << "Not empty int stack: top: " << intStack2.top() << std::endl;
+	std::cout << "Not empty const int stack: top: " << constIntStack.top()
+			  << std::endl;
 	std::cout << "Not empty string stack: top: " << stringStack2.top()
 			  << std::endl;
+	std::cout << "Not empty const string stack: top: " << constStringStack.top()
+			  << std::endl;
+
+	std::cout << std::endl;
+	std::cout << BCYN << "<< Modifiers >>" << RES << std::endl;
+	std::cout << std::endl;
+
+	std::cout << CYN << "< Push >" << RES << std::endl;
+	std::cout << std::endl;
+
+
+	intStack.push(42);
+	intStack2.push(42);
+	// constIntStack.push(42);
+	stringStack.push("pouet");
+	stringStack2.push("pouet");
+	// constStringStack.push("pouet");
+	std::cout << "Size 1 int stack is empty: " << intStack.empty()
+			  << ", size is: " << intStack.size() << " and top is: "
+			  << intStack.top() << std::endl;
+	std::cout << "Size 11 int stack is empty: " << intStack2.empty()
+			  << ", size is: " << intStack2.size() << " and top is: "
+			  << intStack2.top() << std::endl;
+	std::cout << "Size 1 string stack is empty: " << stringStack.empty()
+			  << ", size is: " << stringStack.size() << " and top is: "
+			  << stringStack.top() << std::endl;
+	std::cout << "Size 11 int stack is empty: " << stringStack2.empty()
+			  << ", size is: " << intStack2.size() << " and top is: "
+			  << stringStack2.top() << std::endl;
+
 }
