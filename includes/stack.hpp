@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:53:19 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/08 16:36:17 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/08 16:49:08 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,23 @@ namespace ft
 		return !(x == y);
 	}
 
-	// template <class T, class Container>
-	// bool operator>(const stack<T, Container> &x,
-	// 			   const stack<T, Container> &y);
-	// template <class T, class Container>
-	// bool operator>=(const stack<T, Container> &x,
-	// 				const stack<T, Container> &y);
-	// template <class T, class Container>
-	// bool operator<=(const stack<T, Container> &x,
-	// 				const stack<T, Container> &y);
+	template <class T, class Container>
+	bool operator>(const stack<T, Container> &x, const stack<T, Container> &y)
+	{
+		return y < x;
+	}
+
+	template <class T, class Container>
+	bool operator>=(const stack<T, Container> &x, const stack<T, Container> &y)
+	{
+		return !(x < y);
+	}
+
+	template <class T, class Container>
+	bool operator<=(const stack<T, Container> &x, const stack<T, Container> &y)
+	{
+		return !(y < x);
+	}
 }
 
 #endif
