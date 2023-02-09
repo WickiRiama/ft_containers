@@ -6,7 +6,7 @@
 #    By: mriant <mriant@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 13:03:13 by mriant            #+#    #+#              #
-#    Updated: 2023/02/08 18:00:37 by mriant           ###   ########.fr        #
+#    Updated: 2023/02/09 16:23:01 by mriant           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME_FT = ft_containers
 NAME_STD = std_containers
 
 SRCS = ${addprefix srcs/, \
-		 main.cpp}
+		 main.cpp \
+		 test_stack.cpp}
 
 OBJS_FT = ${SRCS:srcs/%.cpp=build/ft_%.o}
 OBJS_STD = ${SRCS:srcs/%.cpp=build/std_%.o}
