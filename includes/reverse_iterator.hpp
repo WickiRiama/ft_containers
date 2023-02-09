@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/09 16:22:23 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/09 16:47:41 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ namespace ft
 	protected:
 		Iterator current;
 
+//==============================================================================
+// Member types
+//==============================================================================
+
 	public:
 		typedef Iterator
 			iterator_type;
@@ -36,10 +40,16 @@ namespace ft
 			reference;
 		typedef typename iterator_traits<Iterator>::pointer
 			pointer;
+
+//==============================================================================
+// Constructors
+//==============================================================================
+
+	public:
 		reverse_iterator() : current(Iterator()) {}
-		// explicit reverse_iterator(Iterator x);
-		// template <class U>
-		// reverse_iterator(const reverse_iterator<U> &u);
+		explicit reverse_iterator(Iterator x) : current(x) {}
+		template <class U>
+		reverse_iterator(const reverse_iterator<U> &u) : current(u.current) {}
 		// Iterator base() const; // explicit
 		// reference operator*() const;
 		// pointer operator->() const;
