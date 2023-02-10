@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/10 15:14:27 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/10 16:09:47 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ namespace ft
 		template <class IteratorX>
 		friend bool operator<(const reverse_iterator<IteratorX> &x, 
 							  const reverse_iterator<IteratorX> &y);
+
+		template <class IteratorX>
+		friend typename reverse_iterator<IteratorX>::difference_type
+		operator-(const reverse_iterator<IteratorX> &x,
+				  const reverse_iterator<IteratorX> &y);
+
+		template <class IteratorX>
+		friend reverse_iterator<IteratorX>
+		operator+(typename reverse_iterator<IteratorX>::difference_type n,
+				  const reverse_iterator<IteratorX> &x);
 
 //==============================================================================
 // Member object
@@ -147,14 +157,21 @@ namespace ft
 	bool operator<=(const reverse_iterator<Iterator> &x,
 					const reverse_iterator<Iterator> &y) { return !(y < x); }
 
-	// template <class Iterator>
-	// typename reverse_iterator<Iterator>::difference_type
-	// operator-(const reverse_iterator<Iterator> &x,
-	// 	const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// reverse_iterator<Iterator> operator+(
-	// 	typename reverse_iterator<Iterator>::difference_type n,
-	// 	const reverse_iterator<Iterator> &x);
+	template <class Iterator>
+	typename reverse_iterator<Iterator>::difference_type
+	operator-(const reverse_iterator<Iterator> &x,
+			  const reverse_iterator<Iterator> &y)
+	{
+		return y.current - x.current;
+	}
+
+	template <class Iterator>
+	reverse_iterator<Iterator>
+	operator+(typename reverse_iterator<Iterator>::difference_type n,
+			  const reverse_iterator<Iterator> &x)
+	{
+		return reverse_iterator<Iterator>(x.current - n);
+	}
 }
 
 #endif
