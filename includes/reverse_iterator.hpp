@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/10 14:31:09 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/10 14:34:12 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ namespace ft
 			current += n;
 			return *this;
 		}
-		// reference operator[](difference_type n) const;
+		reference operator[](difference_type n) const { return current[-n -1]; }
 	};
 	// template <class Iterator>
 	// bool operator==(
