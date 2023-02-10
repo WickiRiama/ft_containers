@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/10 14:34:12 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/10 15:14:27 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,24 @@ namespace ft
 												  typename iterator_traits<Iterator>::pointer,
 												  typename iterator_traits<Iterator>::reference>
 	{
+
+//==============================================================================
+// Friend functions
+//==============================================================================
+
+	public:
+		template <class IteratorX>
+		friend bool operator==(const reverse_iterator<IteratorX> &x,
+							   const reverse_iterator<IteratorX> &y);
+
+		template <class IteratorX>
+		friend bool operator<(const reverse_iterator<IteratorX> &x, 
+							  const reverse_iterator<IteratorX> &y);
+
+//==============================================================================
+// Member object
+//==============================================================================
+
 	protected:
 		Iterator current;
 
@@ -55,6 +73,7 @@ namespace ft
 // Member functions
 //==============================================================================
 
+	public:
 		Iterator base() const { return current; } // explicit
 		
 		reference operator*() const { Iterator tmp = current; return *--tmp; }
@@ -93,31 +112,44 @@ namespace ft
 		}
 		reference operator[](difference_type n) const { return current[-n -1]; }
 	};
+
+	//==========================================================================
+	// Non member functions
+	//==========================================================================
+	
+	template <class Iterator>
+	bool operator==(const reverse_iterator<Iterator> &x,
+					const reverse_iterator<Iterator> &y)
+	{
+		return x.current == y.current;
+	}
+	
+	template <class Iterator>
+	bool operator<(const reverse_iterator<Iterator> &x,
+				   const reverse_iterator<Iterator> &y)
+	{
+		return x.current > y.current;
+	}
+	
+	template <class Iterator>
+	bool operator!=(const reverse_iterator<Iterator> &x,
+					const reverse_iterator<Iterator> &y) { return !(x == y); }
+	
+	template <class Iterator>
+	bool operator>(const reverse_iterator<Iterator> &x,
+				   const reverse_iterator<Iterator> &y) { return y < x; }
+				   
+	template <class Iterator>
+	bool operator>=(const reverse_iterator<Iterator> &x,
+					const reverse_iterator<Iterator> &y) { return !(x < y); }
+
+	template <class Iterator>
+	bool operator<=(const reverse_iterator<Iterator> &x,
+					const reverse_iterator<Iterator> &y) { return !(y < x); }
+
 	// template <class Iterator>
-	// bool operator==(
-	// 	const reverse_iterator<Iterator> &x,
-	// 	const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// bool operator<(
-	// 	const reverse_iterator<Iterator> &x,
-	// 	const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// bool operator!=(
-	// 	const reverse_iterator<Iterator> &x,
-	// 	const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// bool operator>(
-	// 	const reverse_iterator<Iterator> &x,
-	// 	const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// bool operator>=(const reverse_iterator<Iterator> &x, const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// bool operator<=(
-	// 	const reverse_iterator<Iterator> &x,
-	// 	const reverse_iterator<Iterator> &y);
-	// template <class Iterator>
-	// typename reverse_iterator<Iterator>::difference_type operator-(
-	// 	const reverse_iterator<Iterator> &x,
+	// typename reverse_iterator<Iterator>::difference_type
+	// operator-(const reverse_iterator<Iterator> &x,
 	// 	const reverse_iterator<Iterator> &y);
 	// template <class Iterator>
 	// reverse_iterator<Iterator> operator+(
