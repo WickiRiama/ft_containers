@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/10 13:50:34 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/10 14:31:09 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,24 @@ namespace ft
 			++current;
 			return tmp;
 		}
-		// reverse_iterator operator+(difference_type n) const;
-		// reverse_iterator &operator+=(difference_type n);
-		// reverse_iterator operator-(difference_type n) const;
-		// reverse_iterator &operator-=(difference_type n);
+		reverse_iterator operator+(difference_type n) const
+		{
+			return reverse_iterator(current - n);
+		}
+		reverse_iterator &operator+=(difference_type n)
+		{
+			current -= n;
+			return *this;
+		}
+		reverse_iterator operator-(difference_type n) const
+		{
+			return reverse_iterator(current + n);
+		}
+		reverse_iterator &operator-=(difference_type n)
+		{
+			current += n;
+			return *this;
+		}
 		// reference operator[](difference_type n) const;
 	};
 	// template <class Iterator>
