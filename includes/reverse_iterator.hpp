@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/09 16:47:41 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/10 10:51:37 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,13 @@ namespace ft
 		explicit reverse_iterator(Iterator x) : current(x) {}
 		template <class U>
 		reverse_iterator(const reverse_iterator<U> &u) : current(u.current) {}
-		// Iterator base() const; // explicit
-		// reference operator*() const;
+
+//==============================================================================
+// Member functions
+//==============================================================================
+
+		Iterator base() const { return current; } // explicit
+		reference operator*() const { Iterator tmp = current; return *--tmp; }
 		// pointer operator->() const;
 		// reverse_iterator &operator++();
 		// reverse_iterator operator++(int);
