@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:37:15 by mriant            #+#    #+#             */
-/*   Updated: 2023/02/10 10:51:37 by mriant           ###   ########.fr       */
+/*   Updated: 2023/02/10 10:54:47 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ namespace ft
 
 		Iterator base() const { return current; } // explicit
 		reference operator*() const { Iterator tmp = current; return *--tmp; }
-		// pointer operator->() const;
+		pointer operator->() const { return &(operator*()); }
 		// reverse_iterator &operator++();
 		// reverse_iterator operator++(int);
 		// reverse_iterator &operator--();
